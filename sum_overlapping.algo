@@ -1,0 +1,18 @@
+ALGORITHM Sum_Overlapping
+VAR
+    Tab1 : ARRAY_OF type[5];
+    Tab2 : ARRAY_OF type[5];
+    sum := 0;
+BEGIN
+    FOR i:=0 FROM 0 TO length(Tab1) - 1  DO
+       FOR j:=0 FROM 0 TO length(Tab2) - 1   DO
+           IF (Tab1[i] = Tab2[j]) THEN
+            sum := sum + Tab1[i];
+           END_IF
+       END_FOR
+    END_FOR
+
+    WRITE("Sum of overlapping elements:" sum);
+END
+
+

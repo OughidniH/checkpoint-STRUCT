@@ -1,0 +1,21 @@
+ALGORITHM Sum_Distinct_Tables
+VAR
+    set1 : ARRAY_OF type := [3, 1, 7, 9];
+    set2 : ARRAY_OF type := [2, 4, 1, 9, 3];
+    elt : INTEGER;
+    sum_distinct: INTEGER := 0;
+BEGIN
+    FOR elt OF set1  DO
+       IF NOT (elt IN set2) THEN
+         sum_distinct := sum_distinct + elt;
+       END_IF;
+    END_FOR;
+
+
+   FOR elt OF set2  DO
+       IF NOT (elt IN set1) THEN
+         sum_distinct := sum_distinct + elt;
+       END_IF;
+   END_FOR;
+   WRITE(sum_distinct);
+END
