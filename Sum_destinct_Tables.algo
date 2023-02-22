@@ -1,7 +1,7 @@
 ALGORITHM Sum_Distinct_Tables
 VAR
-    set1 : ARRAY_OF type := [3, 1, 7, 9];
-    set2 : ARRAY_OF type := [2, 4, 1, 9, 3];
+    set1 : ARRAY_OF INTEGER := {3, 1, 7, 9};
+    set2 : ARRAY_OF INTEGER := {2, 4, 1, 9, 3};
     elt : INTEGER;
     sum_distinct: INTEGER := 0;
 BEGIN
@@ -10,8 +10,7 @@ BEGIN
          sum_distinct := sum_distinct + elt;
        END_IF;
     END_FOR;
-
-
+    
    FOR elt OF set2  DO
        IF NOT (elt IN set1) THEN
          sum_distinct := sum_distinct + elt;
